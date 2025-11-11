@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abrir no Day by Two — Day by Two</title>
+    <style>
+      :root {
+        --bg: #0f1116;
+        --card: #171923;
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.7);
+        --accent: #ffd369;
+        --border: rgba(255, 255, 255, 0.12);
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px;
+      }
+      h1, h2, h3 {
+        line-height: 1.25;
+        letter-spacing: 0.3px;
+      }
+      h1 { font-size: 28px; margin: 0 0 8px; }
+      .subtitle { color: var(--muted); margin: 0 0 24px; }
+      .lang-switch {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 0 0 16px;
+      }
+      .lang-switch button {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+      .lang-switch button.active {
+        border-color: var(--accent);
+        background: rgba(255, 211, 105, 0.12);
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 16px;
+      }
+      .section {
+        margin: 18px 0;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      ul { padding-left: 20px; }
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .notice {
+        background: rgba(255, 211, 105, 0.08);
+        border: 1px solid rgba(255, 211, 105, 0.25);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-size: 14px;
+        color: var(--text);
+      }
+      .hidden { display: none; }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      .btn {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 14px;
+        cursor: pointer;
+      }
+      .btn.primary {
+        border-color: var(--accent);
+        background: rgba(255, 211, 105, 0.12);
+      }
+      code.inline {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1px 6px;
+      }
+      @media (max-width: 640px) {
+        .container { padding: 16px; }
+        .card { padding: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 id="title">Abrir no Day by Two</h1>
+        <p id="subtitle" class="subtitle">Day by Two • com.daybytwo.app</p>
+
+        <div class="lang-switch" role="tablist" aria-label="Language selector">
+          <button id="btn-pt" class="active" data-lang="pt" role="tab" aria-selected="true">Português (BR)</button>
+          <button id="btn-en" data-lang="en" role="tab" aria-selected="false">English (US)</button>
+          <button id="btn-es" data-lang="es" role="tab" aria-selected="false">Español</button>
+        </div>
+
+        <div class="meta">
+          <span id="updated-label">Atualizado em:</span>
+          <span id="updated-date"></span>
+          <span>•</span>
+          <span id="owner">Responsável: lacerda.dev</span>
+          <span>•</span>
+          <span id="package">Pacote: com.daybytwo.app</span>
+        </div>
+
+        <!-- Portuguese -->
+        <div id="content-pt" class="content">
+          <div class="section notice" id="status-pt">
+            Redirecionando para o app Day by Two…
+          </div>
+          <div class="section" id="info-pt">
+            <h2>Se nada acontecer</h2>
+            <ul>
+              <li>Abra este link no seu celular.</li>
+              <li>Certifique-se de ter o app Day by Two instalado.</li>
+              <li>O link é usado para concluir o login dentro do app.</li>
+            </ul>
+            <div class="actions">
+              <button id="retry-pt" class="btn primary">Tentar novamente</button>
+              <button id="copy-pt" class="btn">Copiar link</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- English -->
+        <div id="content-en" class="content hidden">
+          <div class="section notice" id="status-en">
+            Redirecting to the Day by Two app…
+          </div>
+          <div class="section" id="info-en">
+            <h2>If nothing happens</h2>
+            <ul>
+              <li>Open this link on your phone.</li>
+              <li>Make sure the Day by Two app is installed.</li>
+              <li>This link is used to complete sign-in inside the app.</li>
+            </ul>
+            <div class="actions">
+              <button id="retry-en" class="btn primary">Try again</button>
+              <button id="copy-en" class="btn">Copy link</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spanish -->
+        <div id="content-es" class="content hidden">
+          <div class="section notice" id="status-es">
+            Redirigiendo a la app Day by Two…
+          </div>
+          <div class="section" id="info-es">
+            <h2>Si no pasa nada</h2>
+            <ul>
+              <li>Abra este enlace en su teléfono.</li>
+              <li>Asegúrese de tener instalada la app Day by Two.</li>
+              <li>Este enlace se usa para completar el inicio de sesión dentro de la app.</li>
+            </ul>
+            <div class="actions">
+              <button id="retry-es" class="btn primary">Intentar de nuevo</button>
+              <button id="copy-es" class="btn">Copiar enlace</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer" id="footer">
+          Este link pode ser atualizado periodicamente. Mudanças significativas serão comunicadas no app.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const btnPT = document.getElementById('btn-pt');
+        const btnEN = document.getElementById('btn-en');
+        const btnES = document.getElementById('btn-es');
+        const cPT = document.getElementById('content-pt');
+        const cEN = document.getElementById('content-en');
+        const cES = document.getElementById('content-es');
+        const title = document.getElementById('title');
+        const subtitle = document.getElementById('subtitle');
+        const updatedLabel = document.getElementById('updated-label');
+        const updatedDate = document.getElementById('updated-date');
+        const owner = document.getElementById('owner');
+        const pkg = document.getElementById('package');
+        const footer = document.getElementById('footer');
+
+        const formatDate = (d, lang) =>
+          d.toLocaleDateString(lang || 'pt-BR', { year: 'numeric', month: 'long', day: '2-digit' });
+
+        const now = new Date();
+        updatedDate.textContent = formatDate(now, 'pt-BR');
+
+        function setLang(lang) {
+          [btnPT, btnEN, btnES].forEach((b) => { b.classList.remove('active'); });
+          if (lang === 'pt') btnPT.classList.add('active');
+          if (lang === 'en') btnEN.classList.add('active');
+          if (lang === 'es') btnES.classList.add('active');
+
+          cPT.classList.toggle('hidden', lang !== 'pt');
+          cEN.classList.toggle('hidden', lang !== 'en');
+          cES.classList.toggle('hidden', lang !== 'es');
+
+          if (lang === 'pt') {
+            title.textContent = 'Abrir no Day by Two';
+            subtitle.textContent = 'Day by Two • com.daybytwo.app';
+            updatedLabel.textContent = 'Atualizado em:';
+            owner.textContent = 'Responsável: lacerda.dev';
+            pkg.textContent = 'Pacote: com.daybytwo.app';
+            footer.textContent = 'Este link pode ser atualizado periodicamente. Mudanças significativas serão comunicadas no app.';
+            updatedDate.textContent = formatDate(now, 'pt-BR');
+          } else if (lang === 'en') {
+            title.textContent = 'Open in Day by Two';
+            subtitle.textContent = 'Day by Two • com.daybytwo.app';
+            updatedLabel.textContent = 'Updated on:';
+            owner.textContent = 'Owner: lacerda.dev';
+            pkg.textContent = 'Package: com.daybytwo.app';
+            footer.textContent = 'This link may be updated periodically. Significant changes will be communicated in the app.';
+            updatedDate.textContent = formatDate(now, 'en-US');
+          } else {
+            title.textContent = 'Abrir en Day by Two';
+            subtitle.textContent = 'Day by Two • com.daybytwo.app';
+            updatedLabel.textContent = 'Actualizado el:';
+            owner.textContent = 'Responsable: lacerda.dev';
+            pkg.textContent = 'Paquete: com.daybytwo.app';
+            footer.textContent = 'Este enlace puede actualizarse periódicamente. Los cambios significativos se comunicarán en la app.';
+            updatedDate.textContent = formatDate(now, 'es-ES');
+          }
+          try { localStorage.setItem('dbt_redirect_lang', lang); } catch {}
+        }
+
+        btnPT.addEventListener('click', () => setLang('pt'));
+        btnEN.addEventListener('click', () => setLang('en'));
+        btnES.addEventListener('click', () => setLang('es'));
+
+        let initial = 'pt';
+        try {
+          const saved = localStorage.getItem('dbt_redirect_lang');
+          if (saved) initial = saved;
+          else {
+            const nav = navigator.language || '';
+            if (nav.startsWith('pt')) initial = 'pt';
+            else if (nav.startsWith('es')) initial = 'es';
+            else initial = 'en';
+          }
+        } catch {
+          initial = 'en';
+        }
+        setLang(initial);
+
+        // Deep link handling
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token') || params.get('token_hash');
+        const type = params.get('type');
+        const email = params.get('email');
+        const scheme = 'daybytwo://auth/callback';
+        // Encaminhar parâmetros relevantes para o app
+        const qp = new URLSearchParams();
+        if (token) qp.set('token', token);
+        if (type) qp.set('type', type);
+        if (email) qp.set('email', email);
+        const redirectUrl = qp.toString() ? scheme + '?' + qp.toString() : scheme;
+        const share = params.get('share'); // opcional: outros parâmetros
+
+        // Bind actions per language
+        const bindActions = () => {
+          const byLang = {
+            pt: { retry: document.getElementById('retry-pt'), copy: document.getElementById('copy-pt'), status: document.getElementById('status-pt') },
+            en: { retry: document.getElementById('retry-en'), copy: document.getElementById('copy-en'), status: document.getElementById('status-en') },
+            es: { retry: document.getElementById('retry-es'), copy: document.getElementById('copy-es'), status: document.getElementById('status-es') },
+          };
+          Object.values(byLang).forEach(({ retry, copy, status }) => {
+            if (retry) retry.onclick = () => window.location.replace(redirectUrl);
+            if (copy) copy.onclick = async () => {
+              try {
+                await navigator.clipboard.writeText(window.location.href);
+                status.textContent = status.textContent + ' ✓';
+              } catch {}
+            };
+          });
+        };
+        bindActions();
+
+        // Attempt to open the app
+        function attemptOpen() {
+          try {
+            window.location.replace(redirectUrl);
+          } catch {}
+        }
+        attemptOpen();
+
+        // Fallback status message per language if nothing happens
+        const setFallback = () => {
+          const lang = (localStorage.getItem('dbt_redirect_lang') || initial);
+          if (lang === 'pt') {
+            document.getElementById('status-pt').textContent = 'Abra este link no seu celular 📱 — ele funciona dentro do app Day by Two.';
+          } else if (lang === 'en') {
+            document.getElementById('status-en').textContent = 'Open this link on your phone 📱 — it works inside the Day by Two app.';
+          } else {
+            document.getElementById('status-es').textContent = 'Abra este enlace en su teléfono 📱 — funciona dentro de la app Day by Two.';
+          }
+        };
+        setTimeout(setFallback, 1000);
+
+        // If no token, inform user
+        if (!token) {
+          const lang = (localStorage.getItem('dbt_redirect_lang') || initial);
+          const warn = 'notice';
+          if (lang === 'pt') {
+            document.getElementById('status-pt').innerHTML = '<span class="' + warn + '">Link inválido: parâmetro <code class="inline">token</code> ausente.</span>';
+          } else if (lang === 'en') {
+            document.getElementById('status-en').innerHTML = '<span class="' + warn + '">Invalid link: missing <code class="inline">token</code> parameter.</span>';
+          } else {
+            document.getElementById('status-es').innerHTML = '<span class="' + warn + '">Enlace inválido: falta el parámetro <code class="inline">token</code>.</span>';
+          }
+        }
+      })();
+    </script>
+  </body>
+  </html>
+
+
