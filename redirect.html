@@ -279,16 +279,23 @@
         setLang(initial);
 
         // Deep link handling
-        const params = new URLSearchParams(window.location.search);
-        const token = params.get('token') || params.get('token_hash');
-        const type = params.get('type');
-        const email = params.get('email');
+        // Support both query (?key=) and hash (#key=) parameters (Supabase often uses hash)
+        const queryParams = new URLSearchParams(window.location.search);
+        const hashParams = new URLSearchParams(window.location.hash.startsWith('#') ? window.location.hash.slice(1) : window.location.hash);
+        const getParam = (k) => queryParams.get(k) || hashParams.get(k);
+        const token = getParam('token') || getParam('token_hash');
+        const type = getParam('type');
+        const email = getParam('email');
+        const accessToken = getParam('access_token');
+        const refreshToken = getParam('refresh_token');
         const scheme = 'daybytwo://auth/callback';
         // Encaminhar parâmetros relevantes para o app
         const qp = new URLSearchParams();
         if (token) qp.set('token', token);
         if (type) qp.set('type', type);
         if (email) qp.set('email', email);
+        if (accessToken) qp.set('access_token', accessToken);
+        if (refreshToken) qp.set('refresh_token', refreshToken);
         const redirectUrl = qp.toString() ? scheme + '?' + qp.toString() : scheme;
         const share = params.get('share'); // opcional: outros parâmetros
 
