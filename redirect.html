@@ -281,7 +281,8 @@
         // Deep link handling
         // Support both query (?key=) and hash (#key=) parameters (Supabase often uses hash)
         const queryParams = new URLSearchParams(window.location.search);
-        const hashParams = new URLSearchParams(window.location.hash.startsWith('#') ? window.location.hash.slice(1) : window.location.hash);
+        const hashStr = window.location.hash.startsWith('#') ? window.location.hash.slice(1) : window.location.hash;
+        const hashParams = new URLSearchParams(hashStr);
         const getParam = (k) => queryParams.get(k) || hashParams.get(k);
         const token = getParam('token') || getParam('token_hash');
         const type = getParam('type');
@@ -297,7 +298,6 @@
         if (accessToken) qp.set('access_token', accessToken);
         if (refreshToken) qp.set('refresh_token', refreshToken);
         const redirectUrl = qp.toString() ? scheme + '?' + qp.toString() : scheme;
-        const share = params.get('share'); // opcional: outros parâmetros
 
         // Bind actions per language
         const bindActions = () => {
@@ -321,10 +321,14 @@
         // Attempt to open the app
         function attemptOpen() {
           try {
-            window.location.replace(redirectUrl);
-          } catch {}
+            // Use window.location.href instead of replace to ensure it works
+            window.location.href = redirectUrl;
+          } catch (err) {
+            console.error('Error redirecting:', err);
+          }
         }
-        attemptOpen();
+        // Small delay to ensure page is loaded
+        setTimeout(attemptOpen, 100);
 
         // Fallback status message per language if nothing happens
         const setFallback = () => {
@@ -339,16 +343,16 @@
         };
         setTimeout(setFallback, 1000);
 
-        // If no token, inform user
-        if (!token) {
+        // If no token or access_token, inform user
+        if (!token && !accessToken) {
           const lang = (localStorage.getItem('dbt_redirect_lang') || initial);
           const warn = 'notice';
           if (lang === 'pt') {
-            document.getElementById('status-pt').innerHTML = '<span class="' + warn + '">Link inválido: parâmetro <code class="inline">token</code> ausente.</span>';
+            document.getElementById('status-pt').innerHTML = '<span class="' + warn + '">Link inválido: parâmetros de autenticação ausentes.</span>';
           } else if (lang === 'en') {
-            document.getElementById('status-en').innerHTML = '<span class="' + warn + '">Invalid link: missing <code class="inline">token</code> parameter.</span>';
+            document.getElementById('status-en').innerHTML = '<span class="' + warn + '">Invalid link: missing authentication parameters.</span>';
           } else {
-            document.getElementById('status-es').innerHTML = '<span class="' + warn + '">Enlace inválido: falta el parámetro <code class="inline">token</code>.</span>';
+            document.getElementById('status-es').innerHTML = '<span class="' + warn + '">Enlace inválido: faltan parámetros de autenticación.</span>';
           }
         }
       })();
