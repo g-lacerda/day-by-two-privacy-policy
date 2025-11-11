@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidade • Privacy Policy • Política de Privacidad — Day by Two</title>
+    <style>
+      :root {
+        --bg: #0f1116;
+        --card: #171923;
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.7);
+        --accent: #ffd369;
+        --border: rgba(255, 255, 255, 0.12);
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 24px;
+      }
+      h1, h2, h3 {
+        line-height: 1.25;
+        letter-spacing: 0.3px;
+      }
+      h1 { font-size: 28px; margin: 0 0 8px; }
+      .subtitle { color: var(--muted); margin: 0 0 24px; }
+      .lang-switch {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 0 0 16px;
+      }
+      .lang-switch button {
+        appearance: none;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+      .lang-switch button.active {
+        border-color: var(--accent);
+        background: rgba(255, 211, 105, 0.12);
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 16px;
+      }
+      .section {
+        margin: 18px 0;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      ul { padding-left: 20px; }
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .notice {
+        background: rgba(255, 211, 105, 0.08);
+        border: 1px solid rgba(255, 211, 105, 0.25);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-size: 14px;
+        color: var(--text);
+      }
+      .hidden { display: none; }
+      @media (max-width: 640px) {
+        .container { padding: 16px; }
+        .card { padding: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 id="title">Política de Privacidade</h1>
+        <p id="subtitle" class="subtitle">Day by Two • com.daybytwo.app</p>
+
+        <div class="lang-switch" role="tablist" aria-label="Language selector">
+          <button id="btn-pt" class="active" data-lang="pt" role="tab" aria-selected="true">Português (BR)</button>
+          <button id="btn-en" data-lang="en" role="tab" aria-selected="false">English (US)</button>
+          <button id="btn-es" data-lang="es" role="tab" aria-selected="false">Español</button>
+        </div>
+
+        <div class="meta">
+          <span id="updated-label">Atualizado em:</span>
+          <span id="updated-date"></span>
+          <span>•</span>
+          <span id="owner">Responsável: lacerda.dev</span>
+          <span>•</span>
+          <span id="package">Pacote: com.daybytwo.app</span>
+        </div>
+
+        <!-- Portuguese -->
+        <div id="content-pt" class="content">
+          <div class="section notice">
+            Esta política descreve como coletamos, usamos e protegemos seus dados no aplicativo Day by Two.
+          </div>
+          <div class="section">
+            <h2>Dados que Coletamos</h2>
+            <ul>
+              <li>Conta: e-mail, nome e foto de perfil.</li>
+              <li>Conteúdo do app: listas, itens, mensagens (texto, imagens e áudio), grupos.</li>
+              <li>Localização: coordenadas quando você opta por compartilhar com o grupo.</li>
+              <li>Identificadores de dispositivo para notificações push (tokens Expo/FCM).</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Como Usamos os Dados</h2>
+            <ul>
+              <li>Prover funcionalidades: listas, chat, grupos e compartilhamento de localização.</li>
+              <li>Sincronização em tempo real entre os membros do grupo.</li>
+              <li>Envio de notificações sobre eventos relevantes (tarefas, localização, mensagens).</li>
+              <li>Melhorias de segurança, estabilidade e experiência do usuário.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Base Legal e Consentimento</h2>
+            <p>Tratamos dados com base no seu consentimento e na execução do serviço. Você pode revogar o consentimento a qualquer momento, desativando permissões do dispositivo ou encerrando sua conta.</p>
+          </div>
+          <div class="section">
+            <h2>Compartilhamento com Terceiros</h2>
+            <ul>
+              <li><strong>Supabase</strong>: autenticação, banco de dados em tempo real e armazenamento de arquivos.</li>
+              <li><strong>Firebase (FCM)</strong>: envio de notificações push para Android.</li>
+              <li>Não vendemos dados pessoais a terceiros.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Armazenamento e Retenção</h2>
+            <ul>
+              <li>Mídias (imagens/áudios) e avatares são armazenados no Supabase Storage.</li>
+              <li>Mensagens podem ter políticas de retenção (ex.: limpeza automática após alguns dias, quando habilitada).</li>
+              <li>Retemos dados enquanto sua conta estiver ativa ou conforme exigido por lei.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Permissões do Dispositivo</h2>
+            <ul>
+              <li><strong>Localização</strong>: necessária apenas quando você decide compartilhar com o grupo; atualiza apenas com o app aberto.</li>
+              <li><strong>Câmera e Fotos</strong>: para foto de perfil e envio de imagens no chat.</li>
+              <li><strong>Microfone</strong>: para gravação e envio de mensagens de áudio.</li>
+              <li>Você pode desativar permissões a qualquer momento nas configurações do dispositivo.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Segurança</h2>
+            <p>Empregamos práticas adequadas de segurança e usamos a infraestrutura do Supabase/Firebase. Apesar de esforços razoáveis, nenhum método é 100% seguro na internet.</p>
+          </div>
+          <div class="section">
+            <h2>Crianças</h2>
+            <p>O app não é direcionado a menores de 13 anos. Se identificarmos dados de menores sem consentimento adequado, iremos removê-los.</p>
+          </div>
+          <div class="section">
+            <h2>Seus Direitos</h2>
+            <ul>
+              <li>Acessar, corrigir ou excluir seus dados.</li>
+              <li>Exportar seus dados quando disponível.</li>
+              <li>Encerrar sua conta a qualquer momento.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Contato</h2>
+            <p>Para dúvidas ou solicitações: <a href="mailto:contato@lacerda.dev">contato@lacerda.dev</a></p>
+          </div>
+          <div class="footer">
+            Esta política pode ser atualizada periodicamente. Alterações significativas serão comunicadas no app.
+          </div>
+        </div>
+
+        <!-- English -->
+        <div id="content-en" class="content hidden">
+          <div class="section notice">
+            This policy explains how we collect, use, and protect your data in the Day by Two app.
+          </div>
+          <div class="section">
+            <h2>Data We Collect</h2>
+            <ul>
+              <li>Account: email, name, and profile picture.</li>
+              <li>App content: lists, items, messages (text, images, audio), groups.</li>
+              <li>Location: coordinates when you choose to share with the group.</li>
+              <li>Device identifiers for push notifications (Expo/FCM tokens).</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>How We Use Data</h2>
+            <ul>
+              <li>Provide features: lists, chat, groups, and location sharing.</li>
+              <li>Realtime synchronization among group members.</li>
+              <li>Send notifications about relevant events (tasks, location, messages).</li>
+              <li>Improve security, stability, and user experience.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Legal Basis & Consent</h2>
+            <p>We process data based on your consent and service performance. You may revoke consent at any time by disabling device permissions or closing your account.</p>
+          </div>
+          <div class="section">
+            <h2>Sharing with Third Parties</h2>
+            <ul>
+              <li><strong>Supabase</strong>: authentication, realtime database, and file storage.</li>
+              <li><strong>Firebase (FCM)</strong>: push notifications for Android.</li>
+              <li>We do not sell personal data to third parties.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Storage & Retention</h2>
+            <ul>
+              <li>Media (images/audio) and avatars are stored in Supabase Storage.</li>
+              <li>Messages may have retention policies (e.g., automatic cleanup after some days when enabled).</li>
+              <li>We retain data while your account is active or as required by law.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Device Permissions</h2>
+            <ul>
+              <li><strong>Location</strong>: only when you choose to share with the group; updates only while the app is open.</li>
+              <li><strong>Camera & Photos</strong>: for profile picture and image sharing in chat.</li>
+              <li><strong>Microphone</strong>: for recording and sending audio messages.</li>
+              <li>You can disable permissions at any time in your device settings.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Security</h2>
+            <p>We apply appropriate security practices and rely on Supabase/Firebase infrastructure. Despite reasonable efforts, no method is 100% secure on the internet.</p>
+          </div>
+          <div class="section">
+            <h2>Children</h2>
+            <p>The app is not directed to children under 13. If we identify data from minors without proper consent, we will remove it.</p>
+          </div>
+          <div class="section">
+            <h2>Your Rights</h2>
+            <ul>
+              <li>Access, correct, or delete your data.</li>
+              <li>Export your data when available.</li>
+              <li>Close your account at any time.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Contact</h2>
+            <p>For questions or requests: <a href="mailto:contato@lacerda.dev">contato@lacerda.dev</a></p>
+          </div>
+          <div class="footer">
+            This policy may be updated periodically. Significant changes will be communicated in the app.
+          </div>
+        </div>
+
+        <!-- Spanish -->
+        <div id="content-es" class="content hidden">
+          <div class="section notice">
+            Esta política describe cómo recopilamos, usamos y protegemos sus datos en la app Day by Two.
+          </div>
+          <div class="section">
+            <h2>Datos que Recopilamos</h2>
+            <ul>
+              <li>Cuenta: correo electrónico, nombre y foto de perfil.</li>
+              <li>Contenido de la app: listas, ítems, mensajes (texto, imágenes, audio), grupos.</li>
+              <li>Ubicación: coordenadas cuando usted decide compartir con el grupo.</li>
+              <li>Identificadores del dispositivo para notificaciones push (tokens Expo/FCM).</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Cómo Usamos los Datos</h2>
+            <ul>
+              <li>Proveer funcionalidades: listas, chat, grupos y compartición de ubicación.</li>
+              <li>Sincronización en tiempo real entre los miembros del grupo.</li>
+              <li>Envío de notificaciones sobre eventos relevantes (tareas, ubicación, mensajes).</li>
+              <li>Mejoras de seguridad, estabilidad y experiencia del usuario.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Base Legal y Consentimiento</h2>
+            <p>Tratamos datos con base en su consentimiento y en la prestación del servicio. Puede revocar el consentimiento en cualquier momento desactivando permisos del dispositivo o cerrando su cuenta.</p>
+          </div>
+          <div class="section">
+            <h2>Compartición con Terceros</h2>
+            <ul>
+              <li><strong>Supabase</strong>: autenticación, base de datos en tiempo real y almacenamiento de archivos.</li>
+              <li><strong>Firebase (FCM)</strong>: notificaciones push para Android.</li>
+              <li>No vendemos datos personales a terceros.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Almacenamiento y Retención</h2>
+            <ul>
+              <li>Medios (imágenes/audio) y avatares se almacenan en Supabase Storage.</li>
+              <li>Los mensajes pueden tener políticas de retención (p. ej., limpieza automática después de algunos días, cuando esté habilitado).</li>
+              <li>Conservamos los datos mientras su cuenta esté activa o según lo exija la ley.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Permisos del Dispositivo</h2>
+            <ul>
+              <li><strong>Ubicación</strong>: solo cuando usted decide compartir con el grupo; actualiza solo con la app abierta.</li>
+              <li><strong>Cámara y Fotos</strong>: para foto de perfil y envío de imágenes en el chat.</li>
+              <li><strong>Micrófono</strong>: para grabar y enviar mensajes de audio.</li>
+              <li>Puede desactivar permisos en cualquier momento en la configuración del dispositivo.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Seguridad</h2>
+            <p>Aplicamos prácticas adecuadas de seguridad y usamos la infraestructura de Supabase/Firebase. Aunque hacemos esfuerzos razonables, ningún método es 100% seguro en internet.</p>
+          </div>
+          <div class="section">
+            <h2>Niños</h2>
+            <p>La app no está dirigida a menores de 13 años. Si identificamos datos de menores sin el consentimiento adecuado, los eliminaremos.</p>
+          </div>
+          <div class="section">
+            <h2>Sus Derechos</h2>
+            <ul>
+              <li>Acceder, corregir o eliminar sus datos.</li>
+              <li>Exportar sus datos cuando esté disponible.</li>
+              <li>Cerrar su cuenta en cualquier momento.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>Contacto</h2>
+            <p>Para dudas o solicitudes: <a href="mailto:contato@lacerda.dev">contato@lacerda.dev</a></p>
+          </div>
+          <div class="footer">
+            Esta política puede actualizarse periódicamente. Los cambios significativos se comunicarán en la app.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const btnPT = document.getElementById('btn-pt');
+        const btnEN = document.getElementById('btn-en');
+        const btnES = document.getElementById('btn-es');
+        const cPT = document.getElementById('content-pt');
+        const cEN = document.getElementById('content-en');
+        const cES = document.getElementById('content-es');
+        const title = document.getElementById('title');
+        const subtitle = document.getElementById('subtitle');
+        const updatedLabel = document.getElementById('updated-label');
+        const updatedDate = document.getElementById('updated-date');
+        const owner = document.getElementById('owner');
+        const pkg = document.getElementById('package');
+
+        const formatDate = (d, lang) =>
+          d.toLocaleDateString(lang || 'pt-BR', { year: 'numeric', month: 'long', day: '2-digit' });
+
+        const now = new Date();
+        updatedDate.textContent = formatDate(now, 'pt-BR');
+
+        function setLang(lang) {
+          // toggle classes
+          [btnPT, btnEN, btnES].forEach((b) => { b.classList.remove('active'); });
+          if (lang === 'pt') btnPT.classList.add('active');
+          if (lang === 'en') btnEN.classList.add('active');
+          if (lang === 'es') btnES.classList.add('active');
+
+          cPT.classList.toggle('hidden', lang !== 'pt');
+          cEN.classList.toggle('hidden', lang !== 'en');
+          cES.classList.toggle('hidden', lang !== 'es');
+
+          // header/meta translations
+          if (lang === 'pt') {
+            title.textContent = 'Política de Privacidade';
+            subtitle.textContent = 'Day by Two • com.daybytwo.app';
+            updatedLabel.textContent = 'Atualizado em:';
+            owner.textContent = 'Responsável: lacerda.dev';
+            pkg.textContent = 'Pacote: com.daybytwo.app';
+            updatedDate.textContent = formatDate(now, 'pt-BR');
+          } else if (lang === 'en') {
+            title.textContent = 'Privacy Policy';
+            subtitle.textContent = 'Day by Two • com.daybytwo.app';
+            updatedLabel.textContent = 'Updated on:';
+            owner.textContent = 'Owner: lacerda.dev';
+            pkg.textContent = 'Package: com.daybytwo.app';
+            updatedDate.textContent = formatDate(now, 'en-US');
+          } else {
+            title.textContent = 'Política de Privacidad';
+            subtitle.textContent = 'Day by Two • com.daybytwo.app';
+            updatedLabel.textContent = 'Actualizado el:';
+            owner.textContent = 'Responsable: lacerda.dev';
+            pkg.textContent = 'Paquete: com.daybytwo.app';
+            updatedDate.textContent = formatDate(now, 'es-ES');
+          }
+          // persist preferred language
+          try { localStorage.setItem('dbt_privacy_lang', lang); } catch {}
+        }
+
+        // attach listeners
+        btnPT.addEventListener('click', () => setLang('pt'));
+        btnEN.addEventListener('click', () => setLang('en'));
+        btnES.addEventListener('click', () => setLang('es'));
+
+        // init with preferred or browser language
+        let initial = 'pt';
+        try {
+          const saved = localStorage.getItem('dbt_privacy_lang');
+          if (saved) initial = saved;
+          else {
+            const nav = navigator.language || '';
+            if (nav.startsWith('pt')) initial = 'pt';
+            else if (nav.startsWith('es')) initial = 'es';
+            else initial = 'en';
+          }
+        } catch {
+          initial = 'en';
+        }
+        setLang(initial);
+      })();
+    </script>
+  </body>
+  </html>
+
+
